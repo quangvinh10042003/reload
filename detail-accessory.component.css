@@ -1,0 +1,139 @@
+.main {
+    padding-top: 80px;
+}
+
+.Box {
+    width: 100%;
+}
+
+.boxImg {
+    width: 70%;
+    margin: auto;
+}
+
+.boxText {
+    width: 80%;
+    margin: auto;
+}
+
+.imgSlide {
+    width: 100%;
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+.quantityInp {
+    width: 50px;
+    border: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+.useQuantity {
+    font-weight: 600;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0px 7px;
+}
+
+.butToCart {
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px;
+    width: 230px;
+}
+
+.login {
+    color: blue;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.boxImage {
+    overflow: hidden;
+}
+
+.boxImage img {
+    overflow: hidden;
+}
+
+.boxImage:hover {
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.237);
+}
+
+.boxImage:hover .butBuyCarol {
+    opacity: 1;
+    transition: 2000ms;
+}
+
+.boxImage {
+    height: 350px;
+}
+
+.divImg {
+    overflow: hidden;
+}
+
+.butBuyCarol {
+    width: 100%;
+    opacity: 0;
+    border-radius: 0px;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+}
+
+.recommend1 {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        padding-top: 60px;
+    }
+    .boxImg {
+        width: 100%;
+        margin: auto;
+    }
+    .boxImage {
+        height: 220px;
+    }
+    .imgSlide {
+        max-height: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    .nameItem {
+        font-size: 18px;
+    }
+    .priceItem {
+        font-size: 15px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    .recommend1 {
+        display: block;
+    }
+    .recommend2 {
+        display: none;
+    }
+}

@@ -1,0 +1,65 @@
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-7">
+            <owl-carousel-o [options]="OptionsSlider">
+                <ng-container *ngFor="let slide of sliderImg">
+                    <ng-template class="" carouselSlide id="{{slide.id}}">
+                        <div class="Box">
+                            <div class="boxImg">
+                                <img class="card-img imgSlide" src="{{slide.img}}">
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+        <div class="col-lg-5">
+            <div class="boxText">
+                <h1>{{data.name}}</h1>
+                <h5>$ {{data.price}}</h5>
+                <p class="mt-3" *ngIf="!accountSignIn">Please <span class="login" routerLink="/signin">Sign In</span> to purchase</p>
+                <h3 class="mt-3">Quantity</h3>
+                <span class="useQuantity" (click)="reduceQuantity()">-</span><input class="quantityInp" id="quantityInp" type="number" [(ngModel)]="quantityValue"><span class="useQuantity" (click)="increaseQuantity()">+</span>
+                <br>
+                <button class="btn btn-primary butToCart mt-3 mb-3" href="#" role="button" *ngIf="data.inStock; else elseCart" (click)="addToCart()">ADD TO CART</button>
+                <ng-template #elseCart>
+                    <button class="btn border border-dark btn-light text-dark butToCart mt-3 mb-3" href="#" role="button">OUT OF STOCK</button>
+                </ng-template>
+                <h3 class="mt-4">Description</h3>
+                <p>{{data.description}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="recommend1 mt-5">
+        <h2 class="mt-2 mb-3">Recommended Product</h2>
+        <owl-carousel-o [options]="OptionsRecommend">
+            <ng-container *ngFor="let item of recommendProduct">
+                <ng-template class="" carouselSlide id="{{item.id}}">
+                    <div class="boxImage position-relative">
+                        <div class="divImg">
+                            <img class="card-img imgSize" src="{{item.imgProduct}}">
+                        </div>
+                        <a class="btn btn-lg butBuyCarol" role="button" (click)="navigateToDetailAccessory(item.id)">View Product</a>
+                    </div>
+                    <h4 class="text-center mt-2 nameItem">{{item.name}}</h4>
+                    <h6 class="text-center priceItem">$ {{item.price}}</h6>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+    <div class="recommend2 mt-5">
+        <h2 class="mt-2 mb-3">Recommended Product</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-4" *ngFor="let item of recommendProduct">
+                <div class="boxImage position-relative">
+                    <div class="divImg">
+                        <img class="card-img imgSize" src="{{item.imgProduct}}">
+                    </div>
+                    <a class="btn btn-lg butBuyCarol" role="button" (click)="navigateToDetailAccessory(item.id)">View Product</a>
+                </div>
+                <h4 class="text-center mt-2 nameItem">{{item.name}}</h4>
+                <h6 class="text-center priceItem">$ {{item.price}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
